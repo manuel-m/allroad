@@ -17,11 +17,14 @@
             "doc": "001_features"
         }]
     }, {
-        "heading": "Using allroad",
+        "heading": "Setup",
         "dir": "01",
         "sections": [{
+            "heading": "Setup",
+            "doc": "010a_config"
+        }, {         
             "heading": "TheContent.json",
-            "doc": "010_config"
+            "doc": "010b_config"
         }, {
             "heading": "Basic content protection",
             "doc": "011_protection"
