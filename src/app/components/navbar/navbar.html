@@ -1,0 +1,17 @@
+<nav class="navbar navbar-static-top navbar-inverse">
+
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#/">
+        {{vm.g.getMainTitle()}}
+      </a>
+        </div>
+        <ul class="nav navbar-nav navbar-right" ng-if="vm.g.getMode()==='details'">
+            <li>
+            	<span class="navbar-text pull-right">
+            		{{vm.g.getCurrentSection().heading}}
+            	</span>
+            </li>
+        </ul>
+    </div>
+</nav>
