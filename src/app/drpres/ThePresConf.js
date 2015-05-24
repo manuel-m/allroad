@@ -39,8 +39,7 @@ angular.module('drpres')
         $http.get('assets/TheContent.json').then(
           function (response_) {
             self.assignConf(response_.data);
-            dfd.resolve(response_.data);
-            console.log(conf);
+            dfd.resolve(conf);
           },
           function (failureResponse_) {
             dfd.reject(failureResponse_);

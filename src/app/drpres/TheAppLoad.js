@@ -1,27 +1,29 @@
 'use strict';
 
 angular.module('drpres')
-  .service('TheAppLoad', function (ThePresConf, ThePres,$q) {
+    .service('TheAppLoad', function (ThePresConf, $q, ThePres) {
 
-    var self = this;
+        var self = this;
 
-    self.fetch = function () {
-      var dfd = $q.defer();
+        self.stateLocalLoad = function(){
+           return ThePres.stateLocalLoad();
 
-      ThePresConf.fetch().then(
-        function(){
-          ThePres.localFetch();
-          dfd.resolve();
-        },
-        function(data_){
-          console.error(data_);
-        }
-      );
+        };
 
-      return dfd.promise;
-    };
+        self.fetch = function () {
+            var dfd = $q.defer();
+            ThePresConf.fetch().then(
+                function (data_) {
+                    dfd.resolve(data_);
+                },
+                function (data_) {
+                    console.error(data_);
+                }
+            );
+
+            return dfd.promise;
+        };
 
 
-
-  })
+    })
 ;
