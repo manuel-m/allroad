@@ -35,7 +35,7 @@ angular.module('drpres')
             return localStorageService.set(self.getLocalStorageKey(), s);
         };
 
-        self.stateLocalLoad = function () {
+        self.localStateLoad = function () {
             self.d = initProto();
             var l = localStorageService.get(self.getLocalStorageKey());
             if (!_.isNull(l)) {

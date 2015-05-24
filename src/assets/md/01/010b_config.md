@@ -7,6 +7,7 @@
 {
     "mainTitle": "Allroad documentation",
     "brand": "Efficiel technologie",
+    "localStorageKey": "allroad_doc",
     "basicProtect": {
         "key": "","activated": false
     },

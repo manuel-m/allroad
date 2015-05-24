@@ -5,9 +5,8 @@ angular.module('drpres')
 
         var self = this;
 
-        self.stateLocalLoad = function(){
-           return ThePres.stateLocalLoad();
-
+        self.localStateLoad = function(){
+           return ThePres.localStateLoad();
         };
 
         self.fetch = function () {
@@ -20,7 +19,6 @@ angular.module('drpres')
                     console.error(data_);
                 }
             );
-
             return dfd.promise;
         };
 

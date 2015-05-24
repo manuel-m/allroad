@@ -21,7 +21,7 @@ angular.module('allroad', ['drpres',
             var dfd = $q.defer();
             TheAppLoad.fetch().then(
                 function () {
-                    TheAppLoad.stateLocalLoad();
+                    TheAppLoad.localStateLoad();
                     dfd.resolve();
                 }
             );
