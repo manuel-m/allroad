@@ -22,6 +22,10 @@ angular.module('drpres')
             return ThePresConf.get().brand;
         };
 
+        self.getErrorCreds = function() {
+            return ThePresConf.get().basicProtect.labels.errorCreds;
+        };
+
         self.getMainTitle = function () {
             return ThePresConf.get().mainTitle;
         };

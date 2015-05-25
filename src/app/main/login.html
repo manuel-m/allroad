@@ -26,7 +26,7 @@
           </div>
           <div ng-if="vm.p.hasFailed()" class="row">
             <div class="col-sm-12">
-              <div class="alert alert-danger" role="alert">Identification incorrecte
+              <div class="alert alert-danger" role="alert">{{vm.g.getErrorCreds()}}
               </div>
             </div>
           </div>
