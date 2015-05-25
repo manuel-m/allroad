@@ -26,6 +26,14 @@ angular.module('drpres')
             return ThePresConf.get().mainTitle;
         };
 
+        self.getPasswordLabel = function () {
+            return ThePresConf.get().basicProtect.labels.password;
+        };
+
+        self.getEnterLabel = function () {
+            return ThePresConf.get().basicProtect.labels.enter;
+        };
+
         self.getLocalStorageKey = function () {
             return ThePresConf.get().localStorageKey;
         };

@@ -3,8 +3,12 @@
     "brand": "Efficiel technologie",
     "localStorageKey": "allroad_doc",
     "basicProtect": {
-        "key": "",
-        "activated": false
+        "key": "ec4e6f70597efbd42accf599ccc0cd66",
+        "activated": true,
+        "labels":{
+            "password":"password",
+            "enter":"enter"
+        }
     },
     "baseDir": "assets/md",
     "chapters": [{
