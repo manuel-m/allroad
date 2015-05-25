@@ -4,7 +4,7 @@
     "localStorageKey": "allroad_doc",
     "basicProtect": {
         "key": "ec4e6f70597efbd42accf599ccc0cd66",
-        "activated": true,
+        "activated": false,
         "labels":{
             "password":"password",
             "enter":"enter",
