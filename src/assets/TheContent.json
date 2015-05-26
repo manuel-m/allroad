@@ -3,7 +3,7 @@
     "brand": "Efficiel technologie",
     "localStorageKey": "allroad_doc",
     "logo":{
-        "activated": false,
+        "activated": true,
         "imagePath": "assets/images/allroad.png"
     },
     "basicProtect": {
