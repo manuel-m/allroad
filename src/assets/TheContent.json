@@ -2,9 +2,13 @@
     "mainTitle": "Allroad documentation",
     "brand": "Efficiel technologie",
     "localStorageKey": "allroad_doc",
+    "logo":{
+        "activated": false,
+        "imagePath": "assets/images/allroad.png"
+    },
     "basicProtect": {
         "key": "ec4e6f70597efbd42accf599ccc0cd66",
-        "activated": true,
+        "activated": false,
         "labels":{
             "password":"Password",
             "enter":"enter",

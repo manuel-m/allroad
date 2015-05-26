@@ -1,62 +1,68 @@
 <div class="container">
-  <p ng-if="vm.d().mode!=='print'" class="text-muted"
-     style="text-align: right;font-size: 0.7em;padding: 0 0 0 0;margin: 0 0 0 0"
+    <p ng-if="vm.d().mode!=='print'" class="text-muted"
+       style="text-align: right;font-size: 0.7em;padding: 0 0 0 0;margin: 0 0 0 0"
 
-    >
-    <span class="fa fa-copyright"></span> {{vm.g.getBrand()}}
-    <span ng-if="vm.g.isFullScreen()">{{vm.g.paginationLabel()}}</span>
-  </p>
+            >
+        <span class="fa fa-copyright"></span> {{vm.g.getBrand()}}
+        <span ng-if="vm.g.isFullScreen()">{{vm.g.paginationLabel()}}</span>
+    </p>
 
 
-  <div ng-if="!vm.g.isFullScreen()" ng-include="'app/components/navbar/navbar.html'"
-       tooltip-placement="bottom" tooltip="
+    <div ng-if="!vm.g.isFullScreen()" ng-include="'app/components/navbar/navbar.html'"
+         tooltip-placement="bottom" tooltip="
      f:fullscreen&nbsp;&nbsp;p:one chapter&nbsp;&nbsp;a:all chapters"
-    ></div>
+            ></div>
 
-  <div class="list-group" ng-if="vm.d().mode=='list'">
-    <a class="list-group-item xxclickcursor"
-       ng-repeat="chapter_ in vm.g.getChapters()"
-       ng-click="vm.g.onSelectChapter(chapter_,$index)">
-      <h4>{{chapter_.heading}}</h4>
+    <div class="list-group" ng-if="vm.d().mode=='list'">
+        <a class="list-group-item xxclickcursor"
+           ng-repeat="chapter_ in vm.g.getChapters()"
+           ng-click="vm.g.onSelectChapter(chapter_,$index)">
+            <h4>{{chapter_.heading}}</h4>
 
-      <p>{{vm.g.sectionsLists(chapter_)}}</p>
-    </a>
-  </div>
+            <p>{{vm.g.sectionsLists(chapter_)}}</p>
+        </a>
+    </div>
 
-  <div ng-if="vm.d().mode=='print'">
-    <div ng-repeat="chapter_ in vm.g.getChaptersList()" class="xxbreakbefore">
-      <div class="row xxbreakafter" ng-repeat="section_ in vm.g.getSections(chapter_)">
-        <h2 class="text-muted pull-right" ng-if="vm.d().showAllChapters==true">{{chapter_.heading}}</h2>
-        <div class="col-sm-12">
-          <btf-markdown ng-include="vm.g.getDocPath(chapter_,section_)"></btf-markdown>
+    <div ng-if="vm.d().mode=='print'">
+        <div ng-repeat="chapter_ in vm.g.getChaptersList()" class="xxbreakbefore">
+            <div class="row xxbreakafter" ng-repeat="section_ in vm.g.getSections(chapter_)">
+                <span ng-if="vm.d().showAllChapters==true">
+                    <h2>
+                        <!--<pre>{{vm.g.hasLogo()}}</pre>-->
+                        <img ng-if="vm.g.hasLogo()" ng-src="{{vm.g.getLogo()}}" />
+                        <span class="text-muted pull-right">{{chapter_.heading}}</span>
+                    </h2>
+                </span>
+
+                <div class="col-sm-12">
+                    <btf-markdown ng-include="vm.g.getDocPath(chapter_,section_)"></btf-markdown>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div ng-if="vm.d().mode=='details'">
-    <div class="row" ng-if="!vm.g.isFullScreen()">
-      <div class="col-sm-12">
-        <div ng-include="'app/components/pagination/pagination.html'"></div>
-      </div>
     </div>
 
-    <div class="row">
-      <div class="col-sm-12">
-        <btf-markdown ng-include="vm.g.getCurrentDocPath()"></btf-markdown>
-      </div>
+
+    <div ng-if="vm.d().mode=='details'">
+        <div class="row" ng-if="!vm.g.isFullScreen()">
+            <div class="col-sm-12">
+                <div ng-include="'app/components/pagination/pagination.html'"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <btf-markdown ng-include="vm.g.getCurrentDocPath()"></btf-markdown>
+            </div>
+        </div>
+        <div ng-if="!vm.g.isFullScreen()" class="row">
+            <div class="col-sm-12">
+                <div ng-include="'app/components/pagination/pagination.html'"></div>
+            </div>
+        </div>
     </div>
-    <div ng-if="!vm.g.isFullScreen()" class="row">
-      <div class="col-sm-12">
-        <div ng-include="'app/components/pagination/pagination.html'"></div>
-      </div>
-    </div>
-  </div>
 
 
-  <hr ng-if="!vm.g.isFullScreen()">
-
+    <hr ng-if="!vm.g.isFullScreen()">
 
 
 </div>

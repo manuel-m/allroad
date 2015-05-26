@@ -6,23 +6,29 @@ angular.module('drpres')
 
         var self = this;
 
-        self.d = {};
+        self.d = {
+            chapterIdx: 0,
+            sectionIdx: 0,
+            mode: 'list',
+            showAllChapters: false,
+            fullScreen: false
+        };
 
-        var initProto = function initProto___() {
-            return {
-                chapterIdx: 0,
-                sectionIdx: 0,
-                mode: 'list',
-                showAllChapters: false,
-                fullScreen: false
-            };
+
+        self.getLogo = function () {
+            return ThePresConf.get().logo.imagePath;
+        };
+
+        self.hasLogo = function(){
+            var conf = ThePresConf.get();
+            return conf.logo && conf.logo.activated;
         };
 
         self.getBrand = function () {
             return ThePresConf.get().brand;
         };
 
-        self.getErrorCreds = function() {
+        self.getErrorCreds = function () {
             return ThePresConf.get().basicProtect.labels.errorCreds;
         };
 
@@ -48,13 +54,12 @@ angular.module('drpres')
         };
 
         self.localStateLoad = function () {
-            self.d = initProto();
             var l = localStorageService.get(self.getLocalStorageKey());
             if (!_.isNull(l)) {
                 _.forEach(l, function (o_, k_) {
                     self.d[k_] = o_;
                 })
-            }else{
+            } else {
                 //console.log(self.d);
                 self.localStore();
             }
