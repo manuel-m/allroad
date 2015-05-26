@@ -27,12 +27,11 @@
         <div ng-repeat="chapter_ in vm.g.getChaptersList()" class="xxbreakbefore">
             <div class="row xxbreakafter" ng-repeat="section_ in vm.g.getSections(chapter_)">
                 <span ng-if="vm.d().showAllChapters==true">
-                    <h2>
-                        <!--<pre>{{vm.g.hasLogo()}}</pre>-->
+                    <h4>
                         <img ng-if="vm.g.hasLogo()" ng-src="{{vm.g.getLogo()}}" />
-                        <!--<img ng-src="{{vm.g.getLogo()}}" />-->
-                        <span class="text-muted pull-right">{{chapter_.heading}}</span>
-                    </h2>
+
+                        <span class="text-muted pull-right">{{vm.g.getMainTitle()}} - {{chapter_.heading}}</span>
+                    </h4>
                 </span>
 
                 <div class="col-sm-12">
